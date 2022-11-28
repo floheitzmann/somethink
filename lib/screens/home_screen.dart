@@ -13,29 +13,64 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: TextButton(
-              onPressed: () {
-                Navigator.push(
+      body: SafeArea(
+        minimum: const EdgeInsets.symmetric(horizontal: 15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Align(
+              alignment: Alignment.centerRight,
+              child: IconButton(
+                onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) {
-                      return SettingsScreen();
-                    },
+                    builder: (context) => const SettingsScreen(),
                   ),
-                );
-              },
-              child: Text(
-                "Settings",
+                ),
+                icon: IconTheme(
+                  data: Theme.of(context).iconTheme,
+                  child: const Icon(
+                    Icons.settings,
+                    size: 30,
+                  ),
+                ),
               ),
             ),
-          )
-        ],
+            const Spacer(),
+            IconTheme(
+              data: Theme.of(context).iconTheme,
+              child: const Icon(Icons.spatial_tracking_outlined, size: 200),
+            ),
+            const Spacer(),
+            Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  elevation: 0,
+                  shadowColor: Colors.transparent,
+                  backgroundColor: Colors.deepOrange,
+                  minimumSize: Size(size.width * 0.7, 60),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    side: BorderSide.none,
+                  ),
+                ),
+                onPressed: () {},
+                child: const Text(
+                  "Play",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: size.height * 0.025),
+          ],
+        ),
       ),
     );
   }
