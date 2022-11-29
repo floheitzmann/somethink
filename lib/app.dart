@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:somethink/main.dart';
 import 'package:somethink/screens/home_screen.dart';
 import 'package:somethink/theme/theme_provider.dart';
 import 'package:somethink/theme/theme_styles.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 final darkBackgroundColor = Colors.grey.shade900;
 final lightBackgroundColor = Colors.grey.shade50;
@@ -53,6 +56,25 @@ class _AppState extends State<App> {
       child: Consumer<ThemeProvider>(
         builder: (context, value, child) {
           return MaterialApp(
+            localeListResolutionCallback: (locales, supportedLocales) {
+              if (locales != null && locales.isNotEmpty) {
+                if (locales.first.languageCode == 'de') {
+                  return const Locale('de', '');
+                } else {
+                  return const Locale('en', '');
+                }
+              }
+            },
+            localizationsDelegates: const [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              S.delegate,
+            ],
+            supportedLocales: const [
+              Locale("en", ""),
+              Locale("de", ""),
+            ],
             theme: Styles.themeData(context, ThemeMode.light),
             darkTheme: Styles.themeData(context, ThemeMode.dark),
             themeMode: provider.mode,

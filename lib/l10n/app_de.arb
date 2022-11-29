@@ -1,0 +1,15 @@
+{
+    "play": "Spielen",
+    "settingsTitle": "Einstellungen",
+    "settingsThemeSubTitle": "Theme",
+    "settingsLanguageSubTitle": "Sprache",
+    "representationTitle": "Darstellung",
+    "gameBackgroundTitle": "Spielhintergrund",
+    "representationAutomatically": "Automatisch",
+    "representationLight": "Hell",
+    "representationDark": "Dunkel",
+    "languageAlertTitle": "Informationen zur Einstellung der Sprache",
+    "languageAlertContent": "Aktuell ist es nicht möglich die Sprache der App separat einzustellen, jedoch orentiert sich die App an der eingestellten Systemsprache.",
+    "next": "Weiter",
+    "cancel": "Abbrechen"
+}

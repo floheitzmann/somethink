@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
 import 'package:somethink/app.dart';
 import 'package:somethink/screens/settings/settings_screen.dart';
 import 'package:somethink/theme/theme_provider.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ChangeThemeScreen extends StatefulWidget {
   const ChangeThemeScreen({super.key});
@@ -23,7 +23,7 @@ class _ChangeThemeScreenState extends State<ChangeThemeScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: const Text("Darstellung"),
+        title: Text(S.of(context).representationTitle),
         titleTextStyle: Theme.of(context).textTheme.headline5,
         leading: IconButton(
           onPressed: () => Navigator.pop(context),

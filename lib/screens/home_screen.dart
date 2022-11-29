@@ -3,6 +3,8 @@ import 'package:page_transition/page_transition.dart';
 import 'package:somethink/screens/game_screen.dart';
 import 'package:somethink/screens/settings/settings_screen.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -14,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final locale = Localizations.localeOf(context);
 
     return Scaffold(
       body: SafeArea(
@@ -65,9 +68,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     type: PageTransitionType.fade,
                   ),
                 ),
-                child: const Text(
-                  "Play",
-                  style: TextStyle(
+                child: Text(
+                  S.of(context).play,
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),

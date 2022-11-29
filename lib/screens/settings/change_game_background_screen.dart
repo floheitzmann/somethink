@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
 
 import '../../app.dart';
 import '../../theme/theme_provider.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ChangeGameBackgroundScreen extends StatefulWidget {
   const ChangeGameBackgroundScreen({super.key});
@@ -33,10 +33,8 @@ class _ChangeGameBackgroundScreenState
             ),
           ),
         ),
-        title: Text(
-          "Spielhintergrund",
-          style: Theme.of(context).textTheme.headline5,
-        ),
+        title: Text(S.of(context).gameBackgroundTitle),
+        titleTextStyle: Theme.of(context).textTheme.headline5,
       ),
       body: SafeArea(
         minimum: const EdgeInsets.all(15),

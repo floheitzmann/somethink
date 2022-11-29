@@ -1,0 +1,15 @@
+{
+    "play": "Play",
+    "settingsTitle": "Settings",
+    "settingsThemeSubTitle": "Theme",
+    "settingsLanguageSubTitle": "Language",
+    "representationTitle": "Darstellung",
+    "gameBackgroundTitle": "Spielhintergrund",
+    "representationAutomatically": "Automatically",
+    "representationLight": "Light",
+    "representationDark": "Dark",
+    "languageAlertTitle": "Information on setting the language",
+    "languageAlertContent": "It is currently not possible to set the language of the app separately, but the app is based on the set system language.",
+    "next": "Next",
+    "cancel": "Cancel"
+}
