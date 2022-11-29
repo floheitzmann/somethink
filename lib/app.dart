@@ -9,6 +9,18 @@ import 'package:somethink/theme/theme_styles.dart';
 final darkBackgroundColor = Colors.grey.shade900;
 final lightBackgroundColor = Colors.grey.shade50;
 
+var backgroundColorKey = "Maize Crayola";
+
+const colors = {
+  "Maize Crayola": Color(0xFFFAC748),
+  "Malachite": Color(0xFF60DF55),
+  "Neon Blue": Color(0xFF486FFA),
+  "Capri": Color(0xFF48BCFA),
+  "Magenta": Color(0xFFEB48FA),
+  "Tart Orange": Color(0xFFFA4848),
+  "Mandarin": Color(0xFFFA7848),
+};
+
 class App extends StatefulWidget {
   const App({super.key});
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:somethink/screens/game_screen.dart';
 import 'package:somethink/screens/settings/settings_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -58,7 +58,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     side: BorderSide.none,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () => Navigator.push(
+                  context,
+                  PageTransition(
+                    child: const GameScreen(),
+                    type: PageTransitionType.fade,
+                  ),
+                ),
                 child: const Text(
                   "Play",
                   style: TextStyle(

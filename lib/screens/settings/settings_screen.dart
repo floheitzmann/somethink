@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:somethink/app.dart';
+import 'package:somethink/screens/settings/change_game_background_screen.dart';
 import 'package:somethink/screens/settings/change_theme_screen.dart';
 import 'package:somethink/theme/theme_provider.dart';
 
@@ -76,6 +77,36 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           );
                         },
                         child: Text(getCurrentThemeType(context)),
+                      ),
+                    ],
+                  ),
+                  const Divider(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Spielhintergrund",
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChangeGameBackgroundScreen(),
+                          ),
+                        ).then((value) {
+                          setState(() {});
+                        }),
+                        child: Container(
+                          height: 16,
+                          width: 16,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: colors[backgroundColorKey],
+                          ),
+                        ),
                       ),
                     ],
                   ),
