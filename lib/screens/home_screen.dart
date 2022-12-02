@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:somethink/screens/game_screen.dart';
 import 'package:somethink/screens/settings/settings_screen.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -61,13 +64,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     side: BorderSide.none,
                   ),
                 ),
-                onPressed: () => Navigator.push(
-                  context,
-                  PageTransition(
-                    child: const GameScreen(),
-                    type: PageTransitionType.fade,
-                  ),
-                ),
+                onPressed: () async {
+                  var questions = json.decode(
+                    await rootBundle
+                        .loadString('assets/questions_for_friends.json'),
+                  );
+
+                  var list = questions[locale.languageCode].cast<String>();
+
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      child: GameScreen(
+                        questions: list,
+                      ),
+                      type: PageTransitionType.fade,
+                    ),
+                  );
+                },
                 child: Text(
                   S.of(context).play,
                   style: const TextStyle(
