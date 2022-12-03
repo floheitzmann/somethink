@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -7,6 +9,7 @@ import 'package:somethink/screens/home_screen.dart';
 import 'package:somethink/theme/theme_provider.dart';
 import 'package:somethink/theme/theme_styles.dart';
 
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 final darkBackgroundColor = Colors.grey.shade900;
@@ -23,6 +26,13 @@ const colors = {
   "Tart Orange": Color(0xFFFA4848),
   "Mandarin": Color(0xFFFA7848),
 };
+
+const collectionNames = [
+  "questions_for_friends",
+  "questions_to_the_partner",
+];
+
+Map<String, dynamic> collections = {};
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -42,7 +52,7 @@ class _AppState extends State<App> {
       isDarkMode = window.platformBrightness == Brightness.dark;
     };
 
-    getCurrentAppTheme();
+    loadCurrentAppTheme();
 
     super.initState();
   }
@@ -85,7 +95,7 @@ class _AppState extends State<App> {
     );
   }
 
-  void getCurrentAppTheme() async {
+  void loadCurrentAppTheme() async {
     provider.themeMode = await provider.preference.getThemeMode();
   }
 }

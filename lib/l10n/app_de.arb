@@ -1,5 +1,7 @@
 {
     "play": "Spielen",
+    "notQuestionDeckSelectedTitle": "Wähle ein Fragendeck aus um spielen zu können.",
+    "questionDeckSelectedTitle": "Ausgewähltes Fragendeck",
     "settingsTitle": "Einstellungen",
     "settingsThemeSubTitle": "Theme",
     "settingsLanguageSubTitle": "Sprache",
@@ -11,5 +13,14 @@
     "languageAlertTitle": "Informationen zur Einstellung der Sprache",
     "languageAlertContent": "Aktuell ist es nicht möglich die Sprache der App separat einzustellen, jedoch orentiert sich die App an der eingestellten Systemsprache.",
     "next": "Weiter",
-    "cancel": "Abbrechen"
+    "cancel": "Abbrechen",
+    "choose": "Auswählen",
+    "change": "Ändern",
+    "decks": "{count} Decks",
+    "@decks": {
+        "type": "int",
+        "placeholders": {
+            "count": {}
+        }
+    }
 }

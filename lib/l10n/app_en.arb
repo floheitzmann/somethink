@@ -1,5 +1,7 @@
 {
     "play": "Play",
+    "notQuestionDeckSelectedTitle": "Select a deck of questions to be able to play.",
+    "questionDeckSelectedTitle": "Selected deck of questions",
     "settingsTitle": "Settings",
     "settingsThemeSubTitle": "Theme",
     "settingsLanguageSubTitle": "Language",
@@ -11,5 +13,14 @@
     "languageAlertTitle": "Information on setting the language",
     "languageAlertContent": "It is currently not possible to set the language of the app separately, but the app is based on the set system language.",
     "next": "Next",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "choose": "Choose",
+    "change": "Change",
+    "decks": "{count} Decks",
+     "@decks": {
+        "type": "int",
+        "placeholders": {
+            "count": {}
+        }
+    }
 }
