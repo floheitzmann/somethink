@@ -61,7 +61,12 @@ class _SelectCollectionOfQuestionsState
                   _selectedDeck,
                 );
               },
-              icon: const Icon(Icons.check),
+              icon: IconTheme(
+                data: Theme.of(context).iconTheme,
+                child: const Icon(
+                  Icons.check,
+                ),
+              ),
             ),
         ],
       ),
