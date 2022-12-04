@@ -24,3 +24,6 @@ This app was shared for educational purposes only. Publishing this app under any
 * [open_settings](https://pub.dev/packages/open_settings)
      
 </details>
+
+## Screenshots
+![](https://github.com/floheitzmann/somethink/tree/main/screenshots/home_screen_1.png?raw=true)|![](https://github.com/floheitzmann/somethink/tree/main/screenshots/game_screen_1.png?raw=true)|![](https://github.com/floheitzmann/somethink/tree/main/screenshots/settings_screen_1.png?raw=true)
