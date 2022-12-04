@@ -22,5 +22,7 @@
         "placeholders": {
             "count": {}
         }
-    }
+    },
+    "nextQuestion": "Nächste Frage",
+    "lastQuestion": "Letzte Frage"
 }

@@ -2,7 +2,6 @@ import 'package:country/country.dart';
 import 'package:flag/flag.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:open_settings/open_settings.dart';
 import 'package:provider/provider.dart';
 import 'package:somethink/app.dart';
 import 'package:somethink/screens/settings/change_game_background_screen.dart';
@@ -23,13 +22,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     final theme = Provider.of<ThemeProvider>(context);
     var locale = Localizations.localeOf(context);
-    late Country country;
+    Country? country;
 
     for (var entry in Countries.values) {
       if (entry.alpha2 == locale.languageCode.toUpperCase()) {
         country = entry;
       }
     }
+
+    country ??= Countries.usa;
 
     return Scaffold(
       appBar: AppBar(
@@ -217,7 +218,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   children: [
                     Text(country.nationality),
                     Flag.fromString(
-                      locale.languageCode,
+                      country.unLocode,
                       height: 16,
                       width: 20,
                     ),

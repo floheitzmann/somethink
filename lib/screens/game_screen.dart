@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:somethink/app.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class GameScreen extends StatefulWidget {
   const GameScreen({super.key, required this.questions});
 
@@ -62,14 +64,14 @@ class _GameScreenState extends State<GameScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            createRoundedTextButton("Letzte Frage", () {
+            createRoundedTextButton(S.of(context).lastQuestion, () {
               if (_index > 0) {
                 setState(() {
                   _index--;
                 });
               }
             }),
-            createRoundedTextButton("Nächste Frage", () {
+            createRoundedTextButton(S.of(context).nextQuestion, () {
               if ((_index + 1) < widget.questions.length) {
                 setState(() {
                   _index++;

@@ -5,8 +5,8 @@
     "settingsTitle": "Settings",
     "settingsThemeSubTitle": "Theme",
     "settingsLanguageSubTitle": "Language",
-    "representationTitle": "Darstellung",
-    "gameBackgroundTitle": "Spielhintergrund",
+    "representationTitle": "Representation",
+    "gameBackgroundTitle": "Game Background",
     "representationAutomatically": "Automatically",
     "representationLight": "Light",
     "representationDark": "Dark",
@@ -22,5 +22,7 @@
         "placeholders": {
             "count": {}
         }
-    }
+    },
+    "nextQuestion": "Next Question",
+    "lastQuestion": "Last Question"
 }

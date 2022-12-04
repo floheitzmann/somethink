@@ -1,7 +1,7 @@
 {
     "de": {
         "name": "Fragen an Freunde",
-        "description": "Diese Sammlung von Fragen widmet sich an Freunde, welche gerne lachen und sich noch besser kennenlernen wollen.",
+        "description": "Diese Sammlung von Fragen widmet sich an Freunde.",
         "questions": [
             "Wofür bist du in deinem Leben besonders dankbar?",
             "In welchem Punkt gleichst du deiner Mutter?",
@@ -39,5 +39,45 @@
             "Welche Tageszeit magst du am liebsten?"
         ]
     }, 
-    "en": {}
+    "en": {
+        "name": "Questions for friends",
+        "description": "This collection of questions is dedicated to friends.",
+        "questions": [
+            "What are you particularly thankful for in your life?",
+            "In what way are you like your mother?",
+            "What three points are most important to you in a friendship?",
+            "Do you go to church?",
+            "Would you name your child after me?",
+            "Are you good at reading?",
+            "What would you never wish for me?",
+            "What conspiracy theory do you believe in?",
+            "How do you make me happy?",
+            "Do you take shampoo and shower gel from hotel rooms?",
+            "Do you have a succinct childhood memory? If so, which one?",
+            "Are you patient?",
+            "What do you spend the most money on?",
+            "What role does your relationship with your mother play for you?",
+            "How important is warmth in the family to you?",
+            "What does the perfect breakfast look like for you?",
+            "Which of my qualities could make you fall in love with me?",
+            "What would you have to do to make me hate you?",
+            "What wrong impression do strangers often have of you?",
+            "What trait would you like to change about yourself?",
+            "Who gives you the best advice?",
+            "When did I behave absolutely wrong?",
+            "What do you do first thing in the morning?",
+            "What did you always want to know about me?",
+            "What three songs are the soundtrack of your life?",
+            "What do you really want to buy someday?",
+            "How do you deal with failure?",
+            "Who do you miss right now?",
+            "Would you like to have yourself as a friend?",
+            "What do you choose your clothes for?",
+            "Shall we go on vacation?",
+            "How important is money to you?",
+            "How do you plan the perfect date?",
+            "What time of day do you like best?"
+        ]
+
+    }
 }

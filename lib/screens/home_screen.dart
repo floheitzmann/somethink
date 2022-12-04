@@ -89,12 +89,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => SelectCollectionOfQuestions(
-                    languageCode: locale.languageCode,
-                  ),
+                      languageCode: locale.languageCode),
                 ),
               ).then((value) {
                 setState(() {
-                  _currentDeck = value;
+                  if (value != null) {
+                    _currentDeck = value;
+                  }
                 });
               }),
               child: Text(

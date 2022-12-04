@@ -33,6 +33,7 @@ class _SelectCollectionOfQuestionsState
         decks = value;
       });
     });
+
     super.initState();
   }
 
@@ -97,7 +98,6 @@ class _SelectCollectionOfQuestionsState
           }
         });
       },
-      isThreeLine: true,
     );
   }
 
