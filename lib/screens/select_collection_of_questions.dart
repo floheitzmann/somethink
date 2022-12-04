@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -42,15 +43,18 @@ class _SelectCollectionOfQuestionsState
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: IconButton(
-          onPressed: () => Navigator.pop(context),
-          icon: IconTheme(
-            data: Theme.of(context).iconTheme,
-            child: const Icon(
-              CupertinoIcons.arrow_left,
-            ),
-          ),
-        ),
+        leadingWidth: Platform.isAndroid ? 0 : 56,
+        leading: Platform.isAndroid
+            ? Container()
+            : IconButton(
+                onPressed: () => Navigator.pop(context),
+                icon: IconTheme(
+                  data: Theme.of(context).iconTheme,
+                  child: const Icon(
+                    CupertinoIcons.arrow_left,
+                  ),
+                ),
+              ),
         title: Text(S.of(context).decks(decks.length)),
         titleTextStyle: Theme.of(context).textTheme.headline5,
         actions: [

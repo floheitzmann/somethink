@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,15 +27,18 @@ class _ChangeThemeScreenState extends State<ChangeThemeScreen> {
         elevation: 0,
         title: Text(S.of(context).representationTitle),
         titleTextStyle: Theme.of(context).textTheme.headline5,
-        leading: IconButton(
-          onPressed: () => Navigator.pop(context),
-          icon: IconTheme(
-            data: Theme.of(context).iconTheme,
-            child: const Icon(
-              CupertinoIcons.arrow_left,
-            ),
-          ),
-        ),
+        leadingWidth: Platform.isAndroid ? 0 : 56,
+        leading: Platform.isAndroid
+            ? Container()
+            : IconButton(
+                onPressed: () => Navigator.pop(context),
+                icon: IconTheme(
+                  data: Theme.of(context).iconTheme,
+                  child: const Icon(
+                    CupertinoIcons.arrow_left,
+                  ),
+                ),
+              ),
       ),
       body: SafeArea(
         minimum: const EdgeInsets.all(15),

@@ -22,6 +22,7 @@ This app was shared for educational purposes only. Publishing this app under any
 * [page_transition](https://pub.dev/packages/page_transition)
 * [country](https://pub.dev/packages/country)
 * [open_settings](https://pub.dev/packages/open_settings)
+* [url_launcher](https://pub.dev/packages/url_launcher)
      
 </details>
 

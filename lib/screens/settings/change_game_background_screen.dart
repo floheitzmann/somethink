@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -24,15 +26,18 @@ class _ChangeGameBackgroundScreenState
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: IconButton(
-          onPressed: () => Navigator.pop(context),
-          icon: IconTheme(
-            data: Theme.of(context).iconTheme,
-            child: const Icon(
-              CupertinoIcons.arrow_left,
-            ),
-          ),
-        ),
+        leadingWidth: Platform.isAndroid ? 0 : 56,
+        leading: Platform.isAndroid
+            ? Container()
+            : IconButton(
+                onPressed: () => Navigator.pop(context),
+                icon: IconTheme(
+                  data: Theme.of(context).iconTheme,
+                  child: const Icon(
+                    CupertinoIcons.arrow_left,
+                  ),
+                ),
+              ),
         title: Text(S.of(context).gameBackgroundTitle),
         titleTextStyle: Theme.of(context).textTheme.headline5,
       ),

@@ -1,7 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:somethink/app.dart';
-
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:somethink/screens/help_screen.dart';
 
 class GameScreen extends StatefulWidget {
   const GameScreen({super.key, required this.questions});
@@ -43,6 +45,21 @@ class _GameScreenState extends State<GameScreen> {
             fontWeight: FontWeight.w600,
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HelpScreen(),
+              ),
+            ),
+            icon: const Icon(
+              Icons.help_outline,
+              size: 30,
+              color: Colors.black,
+            ),
+          ),
+        ],
       ),
       backgroundColor: colors[backgroundColorKey],
       body: SafeArea(
@@ -60,7 +77,10 @@ class _GameScreenState extends State<GameScreen> {
         ),
       ),
       bottomNavigationBar: SafeArea(
-        minimum: const EdgeInsets.symmetric(horizontal: 25),
+        minimum: EdgeInsets.symmetric(
+          horizontal: 25,
+          vertical: Platform.isAndroid ? 20 : 10,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

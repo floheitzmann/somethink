@@ -24,5 +24,8 @@
         }
     },
     "nextQuestion": "Next Question",
-    "lastQuestion": "Last Question"
+    "lastQuestion": "Last Question",
+    "helpCenterTitle": "Help Center",
+    "helpCenterMessage": "Do you have a question or a problem with the app? Then feel free to come to our Discord server and write us your request.",
+    "helpCenterSubMessage": "We are also looking for people who would like to support the project on a voluntary basis as translators and conceptionists."
 }
