@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -9,7 +7,6 @@ import 'package:somethink/screens/home_screen.dart';
 import 'package:somethink/theme/theme_provider.dart';
 import 'package:somethink/theme/theme_styles.dart';
 
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 final darkBackgroundColor = Colors.grey.shade900;
@@ -30,6 +27,7 @@ const colors = {
 const collectionNames = [
   "questions_for_friends",
   "questions_to_the_partner",
+  "conversation_starter"
 ];
 
 Map<String, dynamic> collections = {};

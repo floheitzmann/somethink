@@ -10,6 +10,7 @@ This app was shared for educational purposes only. Publishing this app under any
 * Various topic-based collections of questions.
 * Dark and Light mode, which can also listen to the current system mode.
 * Adjustable background color.
+* Supported languages: German and English
 
 ## Dependencies
 <details>
