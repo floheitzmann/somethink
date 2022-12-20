@@ -4,5 +4,10 @@ class QuestionDeck {
   final String description;
   final List<String> questions;
 
-  QuestionDeck(this.languageCode, this.name, this.description, this.questions);
+  QuestionDeck(
+    this.languageCode,
+    this.name,
+    this.description,
+    this.questions,
+  );
 }

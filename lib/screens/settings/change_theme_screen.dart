@@ -59,23 +59,26 @@ class _ChangeThemeScreenState extends State<ChangeThemeScreen> {
                   count++;
                   return Column(
                     children: [
-                      InkWell(
-                        onTap: () => theme.themeMode = mode,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              getThemeTypeName(context, mode),
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w500,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 4),
+                        child: InkWell(
+                          onTap: () => theme.themeMode = mode,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                getThemeTypeName(context, mode),
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
-                            ),
-                            if (theme.mode == mode)
-                              const Icon(
-                                Icons.check,
-                                size: 16,
-                              ),
-                          ],
+                              if (theme.mode == mode)
+                                const Icon(
+                                  Icons.check,
+                                  size: 16,
+                                ),
+                            ],
+                          ),
                         ),
                       ),
                       if (count < ThemeMode.values.length) const Divider(),

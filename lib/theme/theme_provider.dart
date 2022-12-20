@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:somethink/main.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:somethink/theme/theme_preference.dart';
 
 class ThemeProvider with ChangeNotifier {
@@ -16,7 +16,8 @@ class ThemeProvider with ChangeNotifier {
 
   bool isDarkTheme() {
     if (mode == ThemeMode.system) {
-      return isDarkMode;
+      return SchedulerBinding.instance.window.platformBrightness ==
+          Brightness.dark;
     } else {
       return mode == ThemeMode.dark;
     }

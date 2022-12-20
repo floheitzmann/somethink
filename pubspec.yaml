@@ -75,6 +75,7 @@ flutter:
   assets:
     - questions_for_friends.json
     - questions_to_the_partner.json
+    - conversation_starter.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

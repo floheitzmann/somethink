@@ -73,60 +73,66 @@ class _SettingsScreenState extends State<SettingsScreen> {
               width: double.infinity,
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        S.of(context).representationTitle,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w500,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          S.of(context).representationTitle,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const ChangeThemeScreen();
-                              },
-                            ),
-                          );
-                        },
-                        child: Text(getCurrentThemeType(context)),
-                      ),
-                    ],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const ChangeThemeScreen();
+                                },
+                              ),
+                            );
+                          },
+                          child: Text(getCurrentThemeType(context)),
+                        ),
+                      ],
+                    ),
                   ),
                   const Divider(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        S.of(context).gameBackgroundTitle,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                const ChangeGameBackgroundScreen(),
-                          ),
-                        ).then((value) {
-                          setState(() {});
-                        }),
-                        child: Container(
-                          height: 16,
-                          width: 16,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: colors[backgroundColorKey],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          S.of(context).gameBackgroundTitle,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
-                      ),
-                    ],
+                        GestureDetector(
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const ChangeGameBackgroundScreen(),
+                            ),
+                          ).then((value) {
+                            setState(() {});
+                          }),
+                          child: Container(
+                            height: 16,
+                            width: 16,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: colors[backgroundColorKey],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -218,16 +224,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 width: double.infinity,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(country.nationality),
-                    Flag.fromString(
-                      country.unLocode,
-                      height: 16,
-                      width: 20,
-                    ),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(country.nationality),
+                      Flag.fromString(
+                        country.unLocode,
+                        height: 16,
+                        width: 20,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

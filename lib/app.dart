@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:somethink/main.dart';
 import 'package:somethink/screens/home_screen.dart';
 import 'package:somethink/theme/theme_provider.dart';
 import 'package:somethink/theme/theme_styles.dart';
@@ -40,16 +38,10 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  var window = WidgetsBinding.instance.window;
-  var provider = ThemeProvider();
-  var brightness = SchedulerBinding.instance.window.platformBrightness;
+  final _provider = ThemeProvider();
 
   @override
   void initState() {
-    window.onPlatformBrightnessChanged = () {
-      isDarkMode = window.platformBrightness == Brightness.dark;
-    };
-
     loadCurrentAppTheme();
 
     super.initState();
@@ -59,7 +51,7 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) {
-        return provider;
+        return _provider;
       },
       child: Consumer<ThemeProvider>(
         builder: (context, value, child) {
@@ -85,7 +77,7 @@ class _AppState extends State<App> {
             ],
             theme: Styles.themeData(context, ThemeMode.light),
             darkTheme: Styles.themeData(context, ThemeMode.dark),
-            themeMode: provider.mode,
+            themeMode: _provider.mode,
             home: const HomeScreen(),
           );
         },
@@ -94,6 +86,6 @@ class _AppState extends State<App> {
   }
 
   void loadCurrentAppTheme() async {
-    provider.themeMode = await provider.preference.getThemeMode();
+    _provider.themeMode = await _provider.preference.getThemeMode();
   }
 }
