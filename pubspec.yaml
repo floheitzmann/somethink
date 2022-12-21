@@ -47,6 +47,8 @@ dependencies:
   open_settings: ^2.0.2
   provider: ^6.0.4
   url_launcher: ^6.1.7
+  icons_launcher: ^2.0.6
+  flutter_native_splash: ^2.2.16
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +78,7 @@ flutter:
     - questions_for_friends.json
     - questions_to_the_partner.json
     - conversation_starter.json
+    - somethink_logo.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

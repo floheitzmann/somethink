@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:somethink/models/questions_deck.dart';
 import 'package:somethink/screens/game_screen.dart';
@@ -19,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
+    FlutterNativeSplash.remove();
     super.initState();
   }
 
