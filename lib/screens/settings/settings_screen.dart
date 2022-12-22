@@ -240,6 +240,93 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
               ),
             ),
+            // const SizedBox(height: 25),
+            // Text(
+            //   S.of(context).others,
+            //   style: Theme.of(context).textTheme.subtitle1,
+            // ),
+            // const SizedBox(height: 6),
+            // Container(
+            //   padding: const EdgeInsets.all(12),
+            //   margin: const EdgeInsets.only(top: 6),
+            //   decoration: BoxDecoration(
+            //     color: theme.isDarkTheme()
+            //         ? darkBackgroundColor
+            //         : lightBackgroundColor,
+            //     borderRadius: BorderRadius.circular(8),
+            //   ),
+            //   width: double.infinity,
+            //   child: Column(
+            //     children: [
+            //       Padding(
+            //         padding: const EdgeInsets.symmetric(vertical: 4),
+            //         child: Row(
+            //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //           children: [
+            //             Text(
+            //               "Help us",
+            //               style: const TextStyle(
+            //                 fontWeight: FontWeight.w500,
+            //               ),
+            //             ),
+            //             GestureDetector(
+            //               onTap: () {
+            //                 Navigator.push(
+            //                   context,
+            //                   MaterialPageRoute(
+            //                     builder: (context) {
+            //                       return const ChangeThemeScreen();
+            //                     },
+            //                   ),
+            //                 );
+            //               },
+            //               child: IconTheme(
+            //                 data: Theme.of(context).iconTheme,
+            //                 child: const Icon(
+            //                   CupertinoIcons.arrow_right,
+            //                   size: 20,
+            //                 ),
+            //               ),
+            //             ),
+            //           ],
+            //         ),
+            //       ),
+            //       // const Divider(),
+            //       // Padding(
+            //       //   padding: const EdgeInsets.symmetric(vertical: 4),
+            //       //   child: Row(
+            //       //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //       //     children: [
+            //       //       Text(
+            //       //         style: const TextStyle(
+            //       //           fontWeight: FontWeight.w500,
+            //       //         ),
+            //       //       ),
+            //       //       GestureDetector(
+            //       //         onTap: () => Navigator.push(
+            //       //           context,
+            //       //           MaterialPageRoute(
+            //       //             builder: (context) =>
+            //       //                 const ChangeGameBackgroundScreen(),
+            //       //           ),
+            //       //         ).then((value) {
+            //       //           setState(() {});
+            //       //         }),
+            //       //         child: Container(
+            //       //           height: 16,
+            //       //           width: 16,
+            //       //           decoration: BoxDecoration(
+            //       //             borderRadius: BorderRadius.circular(8),
+            //       //             color: colors[backgroundColorKey],
+            //       //           ),
+            //       //         ),
+            //       //       ),
+            //       //     ],
+            //       //   ),
+            //       // ),
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),

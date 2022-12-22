@@ -91,7 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => SelectCollectionOfQuestions(
-                      languageCode: locale.languageCode),
+                    languageCode: locale.languageCode,
+                  ),
                 ),
               ).then((value) {
                 setState(() {
@@ -100,6 +101,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   }
                 });
               }),
+              style: TextButton.styleFrom(
+                textStyle: const TextStyle(
+                  fontSize: 16,
+                ),
+              ),
               child: Text(
                 _currentDeck == null
                     ? S.of(context).choose

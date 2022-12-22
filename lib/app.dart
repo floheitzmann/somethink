@@ -29,6 +29,11 @@ const collectionNames = [
   "conversation_starter"
 ];
 
+const supportedLocales = [
+  Locale("en", ""),
+  Locale("de", ""),
+];
+
 Map<String, dynamic> collections = {};
 
 class App extends StatefulWidget {
@@ -75,10 +80,7 @@ class _AppState extends State<App> {
               GlobalCupertinoLocalizations.delegate,
               S.delegate,
             ],
-            supportedLocales: const [
-              Locale("en", ""),
-              Locale("de", ""),
-            ],
+            supportedLocales: supportedLocales,
             theme: Styles.themeData(context, ThemeMode.light),
             darkTheme: Styles.themeData(context, ThemeMode.dark),
             themeMode: _provider.mode,

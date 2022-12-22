@@ -90,9 +90,20 @@ class _SelectCollectionOfQuestionsState
 
   Widget createSelectableQuestionDeck(QuestionDeck deck) {
     return ListTile(
-      title: Text(deck.name),
+      title: Text(
+        deck.name,
+        style: const TextStyle(
+          fontSize: 17,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
       selected: _selectedDeck != null && _selectedDeck == deck,
-      subtitle: Text(deck.description),
+      subtitle: Text(
+        deck.description,
+        style: const TextStyle(
+          fontSize: 15,
+        ),
+      ),
       onTap: () {
         setState(() {
           if (_selectedDeck != null && _selectedDeck == deck) {
