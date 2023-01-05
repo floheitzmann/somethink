@@ -65,6 +65,7 @@ class _AppState extends State<App> {
       child: Consumer<ThemeProvider>(
         builder: (context, value, child) {
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             localeListResolutionCallback: (locales, supportedLocales) {
               if (locales != null && locales.isNotEmpty) {
                 if (locales.first.languageCode == 'de') {

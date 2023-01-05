@@ -24,6 +24,7 @@ This app was shared for educational purposes only. Publishing this app under any
 * [country](https://pub.dev/packages/country)
 * [open_settings](https://pub.dev/packages/open_settings)
 * [url_launcher](https://pub.dev/packages/url_launcher)
+* [icons_launcher](https://pub.dev/packages/icons_launcher)
      
 </details>
 
