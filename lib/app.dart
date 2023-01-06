@@ -26,7 +26,8 @@ const colors = {
 const collectionNames = [
   "questions_for_friends",
   "questions_to_the_partner",
-  "conversation_starter"
+  "conversation_starter",
+  "speak_ones_mind"
 ];
 
 const supportedLocales = [
