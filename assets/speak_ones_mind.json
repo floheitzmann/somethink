@@ -1,7 +1,7 @@
 {
     "de": {
         "name": "Klartext sprechen",
-        "description": "Es geht darum, offen und direkt miteinander zu sprechen und keine Angst davor zu haben, die eigene Meinung zu äußern. Die Fragen in dieser Kategorie zielen darauf ab, tiefgründige und ehrliche Antworten zu erhalten und das Verständnis füreinander zu vertiefen.",
+        "description": "Es geht darum, offen und direkt miteinander zu sprechen und keine Angst davor zu haben, die eigene Meinung zu äußern.",
         "questions": [
             "Wie definierst du Erfolg?",
             "Wie hältst du dich motiviert?",
@@ -44,7 +44,7 @@
     },
     "en": {
         "name": "Speak one's mind",
-        "description": "It's about speaking openly and directly with each other and not being afraid to express your own opinion. The questions in this category aim to get deep and honest answers and deepen understanding for each other.",
+        "description": "It's about speaking openly and directly with each other and not being afraid to express your own opinion.",
         "questions": [
             "How do you define success?",
             "How do you stay motivated?",

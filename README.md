@@ -32,3 +32,7 @@ This app was shared for educational purposes only. Publishing this app under any
 Game Screen           |  Home Screen           |    Settings Screen     |
 :--------------------:|:----------------------:|:----------------------:|
 ![](https://github.com/floheitzmann/somethink/blob/main/screenshots/game_screen_1.png?raw=true)|![](https://github.com/floheitzmann/somethink/blob/main/screenshots/home_screen_1.png?raw=true)|![](https://github.com/floheitzmann/somethink/blob/main/screenshots/settings_screen_1.png?raw=true)
+
+Settings Screen (Light)|
+:---------------------:|
+![](https://github.com/floheitzmann/somethink/blob/main/screenshots/settings_screen_1_light.png?raw=true)
