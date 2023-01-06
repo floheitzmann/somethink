@@ -1,6 +1,6 @@
 # somethink
 
-This mobile game is for great conversations with friends. Get to know yourself better and just let your thoughts run free.
+Somethink is an app that allows users to select from various packages of questions and mix them up for each game. The app provides a fun and varied way to converse with friends, family members, or a partner and learn more about each other. The questions are designed to deepen relationships and strengthen understanding of one another. With Somethink, users have the opportunity to enrich and strengthen their relationships in a playful way.
 
 ## Acknowledgments
 
