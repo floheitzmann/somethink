@@ -1,7 +1,7 @@
 {
     "de": {
-        "name": "Fragen an Freunde",
-        "description": "Diese Sammlung von Fragen widmet sich an Freunde.",
+        "name": "Freundschaftsfragen",
+        "description": "Fragen um Ihre Freundschaft zu vertiefen und mehr übereinander zu erfahren.",
         "questions": [
             "Wofür bist du in deinem Leben besonders dankbar?",
             "In welchem Punkt gleichst du deiner Mutter?",
@@ -40,8 +40,8 @@
         ]
     }, 
     "en": {
-        "name": "Questions for friends",
-        "description": "This collection of questions is dedicated to friends.",
+        "name": "Friendship Questions",
+        "description": "Questions to deepen your friendship and learn more about each other.",
         "questions": [
             "What are you particularly thankful for in your life?",
             "In what way are you like your mother?",

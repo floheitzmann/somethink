@@ -1,7 +1,7 @@
 {
     "de": {
-        "name": "Fragen um ein Gespräch zu starten",
-        "description": "Diese Sammlung von Fragen widmet sich an jeden der ein Gespräch mit einfachen Fragen starten möchte.",
+        "name": "Eisbrecher",
+        "description": "Diese Fragen sollen dabei helfen, ein Gespräch in Gang zu bringen und die Kommunikation zu erleichtern.",
         "questions": [
             "Wie war dein Tag heute?",
             "Was hast du heute gemacht?",
@@ -36,8 +36,8 @@
         ]
     }, 
     "en": {
-        "name": "Questions to start a conversation",
-        "description": "This collection of questions is dedicated to anyone who wants to start a conversation with simple questions.",
+        "name": "Icebreaker",
+        "description": "These questions are designed to help start a conversation and facilitate communication.",
         "questions": [
             "How was your day today?",
             "What did you do today?",

@@ -1,7 +1,7 @@
 {
     "de": {
-        "name": "Fragen an dein:e Partner:in",
-        "description": "Diese Sammlung an fragen widmet sich an den oder die Partner:in.",
+        "name": "Persönliche Fragen",
+        "description": "Fragen um die Beziehung zu vertiefen und mehr übereinander zu erfahren.",
         "questions": [
             "Was ist deine schönste Erinnerung?",
             "Mit welcher Person würdest du gern mal ausgiebig zusammen zu Abend essen?",
@@ -58,8 +58,8 @@
         ]
     },
     "en": {
-        "name": "Questions for your partner",
-        "description": "This collection of questions is dedicated to the partner.",
+        "name": "Personal Questions",
+        "description": "Questions to deepen the relationship and learn more about each other.",
         "questions": [
             "What's your fondest memory?",
             "Who would you like to have a long dinner with?",
