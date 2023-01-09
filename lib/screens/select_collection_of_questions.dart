@@ -119,6 +119,8 @@ class _SelectCollectionOfQuestionsState
   Future<List<QuestionDeck>> loadCollections() async {
     List<QuestionDeck> list = [];
 
+    // Todo: Implement the option of questions with answers
+
     for (var key in collectionNames) {
       var string = await rootBundle.loadString("assets/$key.json");
       var allData = jsonDecode(string);
@@ -128,6 +130,7 @@ class _SelectCollectionOfQuestionsState
         data["name"],
         data["description"],
         data["questions"].cast<String>(),
+        null,
       );
 
       list.add(deck);

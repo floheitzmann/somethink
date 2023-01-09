@@ -148,15 +148,15 @@
                 "answer": "Europe"
             },
             {
-                "question": "What is the largest state in Africa?",
+                "question": "Which country is the largest country in Africa?",
                 "answer": "Algeria"
             },
             {
-                "question": "What is the largest state in Asia?",
-                "answer": "China"
+                "question": "Which country is the largest country in Asia?",
+                "answer": "Chinese"
             },
             {
-                "question": "What is the largest state in Oceania?",
+                "question": "Which country is the largest state in Oceania?",
                 "answer": "Australia"
             },
             {
@@ -165,39 +165,39 @@
             },
             {
                 "question": "Which three countries share the Arabian Peninsula?",
-                "answer": "Saudi Arabia, Yemen, and Oman"
+                "answer": "Saudi Arabia, Yemen and Oman"
             },
             {
-                "question": "In which country is the majority of the Sahara Desert located?",
+                "question": "In which country is most of the Sahara Desert located?",
                 "answer": "Algeria"
             },
             {
-                "question": "In which country is the highest mountain in the world, Mount Everest, located?",
+                "question": "In which country is the highest mountain in the world, Mount Everest?",
                 "answer": "Nepal"
             },
             {
-                "question": "What is the most densely populated island in the world?",
+                "question": "Which country is the most populated island in the world?",
                 "answer": "Honshu, Japan"
             },
             {
-                "question": "What is the most densely populated nation in the world?",
+                "question": "Which country is the most populated nation in the world?",
                 "answer": "Monaco"
             },
             {
-                "question": "What is the smallest state in the world?",
+                "question": "Which country is the smallest country in the world?",
                 "answer": "Vatican City"
             },
             {
-                "question": "What country has the largest population in the world?",
-                "answer": "China"
+                "question": "Which country has the largest population in the world?",
+                "answer": "Chinese"
             },
             {
-                "question": "What country has the largest area in the world?",
+                "question": "Which country has the largest area in the world?",
                 "answer": "Russia"
             },
             {
                 "question": "Which two countries share the island of Borneo?",
-                "answer": "Brunei, Indonesia, and Malaysia"
+                "answer": "Brunei, Indonesia and Malaysia"
             },
             {
                 "question": "Which country has the longest coastline in the world?",
@@ -205,19 +205,19 @@
             },
             {
                 "question": "Which country has the largest area?",
-                "answer": "The Russian Federation has the largest area of all countries on Earth, followed by Canada and the USA."
+                "answer": "The Russian Federation has the largest area of any country on earth, followed by Canada and the United States."
             },
             {
-                "question": "Which is the highest mountain in the world?",
+                "question": "What is the highest mountain in the world?",
                 "answer": "The highest mountain in the world is Mount Everest, which has a height of 8,848 meters and is located in Nepal and China."
             },
             {
-                "question": "Which is the longest river in the world?",
-                "answer": "The longest river in the world is the Nile, which is approximately 6,650 kilometers long and flows through Egypt, Sudan, Eritrea, Ethiopia, and Tanzania."
+                "question": "What is the longest river in the world?",
+                "answer": "The longest river in the world is the Nile, which has a length of about 6,650 kilometers and flows through Egypt, Sudan, Eritrea, Ethiopia and Tanzania."
             },
             {
                 "question": "What time zone is Berlin in?",
-                "answer": "Berlin is in Central European Time (CET) or Coordinated Universal Time (UTC+1)."
+                "answer": "Berlin is on Central European Time (CET) or Coordinated Universal Time (UTC+1)."
             },
             {
                 "question": "How many countries are there in Africa?",
@@ -228,24 +228,24 @@
                 "answer": "Australia is the smallest continent in the world in terms of land area."
             },
             {
-                "question": "Which is the largest country in Asia?",
+                "question": "What is the largest country in Asia?",
                 "answer": "The Russian Federation is the largest country in Asia, followed by China and India."
             },
             {
                 "question": "Which country has the largest population?",
-                "answer": "China has the largest population of all countries in the world, followed by India and the USA."
+                "answer": "China has the largest population of any country in the world, followed by India and the United States."
             },
             {
-                "question": "Which is the highest waterfall in the world?",
-                "answer": "The highest waterfall in the world is Angel Falls in Venezuela, which has a height of about 979 meters."
+                "question": "What is the tallest waterfall in the world?",
+                "answer": "The highest waterfall in the world is the Angel Falls in Venezuela, which has a height of around 979 meters."
             },
             {
                 "question": "Which country has the largest economy?",
-                "answer": "The USA has the largest economy in the world, followed by China and Japan."
+                "answer": "The US has the largest economy in the world, followed by China and Japan."
             },
             {
-                "question": "Which is the lowest point on Earth?",
-                "answer": "The lowest point on Earth is the Mariana Trench in the Pacific Ocean, which has a depth of about 11,000 meters."
+                "question": "Which is the lowest point on earth?",
+                "answer": "The deepest point on earth is the Mariana Trench in the Pacific Ocean, which has a depth of around 11,000 meters."
             },
             {
                 "question": "Which is the largest ocean in the world?",
@@ -253,15 +253,31 @@
             },
             {
                 "question": "Which country is the largest oil exporter in the world?",
-                "answer": "Saudi Arabia is the largest oil exporter in the world, followed by Russia and the United Arab Emirates."
+                "answer": "Saudi Arabia is the world's largest oil exporter, followed by Russia and the United Arab Emirates."
             },
             {
-                "question": "Which country has the highest population density?",
-                "answer": "Monaco has the highest population density of all countries in the world, followed by Singapore and Hong Kong."
+                "question": "Which country has the most population?",
+                "answer": "Monaco has the highest population density of any country in the world, followed by Singapore and Bahrain."
             },
             {
-                "question": "Which is the largest desert in the world?",
-                "answer": "The Sahara Desert is the largest desert in the world, covering an area of about 9.2 million square kilometers in North Africa."
+                "question": "What is the largest country in South America?",
+                "answer": "Brazil is the largest country in South America, followed by Argentina and Peru."
+            },
+            {
+                "question": "What is the largest lake in the world?",
+                "answer": "The Caspian Sea is the largest lake in the world, followed by Lake Baikal and the Aral Sea."
+            },
+            {
+                "question": "What is the most densely populated country in the world?",
+                "answer": "Singapore is the most densely populated country in the world, followed by Monaco and Bangladesh."
+            },
+            {
+                "question": "Which country has the largest number of national parks?",
+                "answer": "The US has the largest number of national parks of any country in the world, with over 400 national parks."
+            },
+            {
+                "question": "Which country has the longest coastline?",
+                "answer": "Canada has the longest coastline of any country in the world, at over 202,080 kilometers."
             }
         ]
     }

@@ -1,16 +1,15 @@
 import 'dart:io';
 
 import 'package:country/country.dart';
-import 'package:flag/flag.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:somethink/app.dart';
-import 'package:somethink/screens/settings/change_game_background_screen.dart';
 import 'package:somethink/screens/settings/change_theme_screen.dart';
 import 'package:somethink/theme/theme_provider.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:somethink/widgets/topic_button.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -44,290 +43,223 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 onPressed: () => Navigator.pop(context),
                 icon: IconTheme(
                   data: Theme.of(context).iconTheme,
-                  child: const Icon(
-                    CupertinoIcons.arrow_left,
-                  ),
+                  child: const Icon(CupertinoIcons.clear),
                 ),
               ),
         title: Text(S.of(context).settingsTitle),
         titleTextStyle: Theme.of(context).textTheme.headline5,
       ),
       body: SafeArea(
+        // Todo: implement
+//  GestureDetector(
+//                           onTap: () => Navigator.push(
+//                             context,
+//                             MaterialPageRoute(
+//                               builder: (context) =>
+//                                   const ChangeGameBackgroundScreen(),
+//                             ),
+//                           ).then((value) {
+//                             setState(() {});
+//                           }),
+//                           child: Container(
+//                             height: 16,
+//                             width: 16,
+//                             decoration: BoxDecoration(
+//                               borderRadius: BorderRadius.circular(8),
+//                               color: colors[backgroundColorKey],
+//                             ),
+//                           ),
+//                         ),
         minimum: const EdgeInsets.all(15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              S.of(context).settingsThemeSubTitle,
-              style: Theme.of(context).textTheme.subtitle1,
-            ),
-            Container(
-              padding: const EdgeInsets.all(12),
-              margin: const EdgeInsets.only(top: 6),
-              decoration: BoxDecoration(
-                color: theme.isDarkTheme()
-                    ? darkBackgroundColor
-                    : lightBackgroundColor,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              width: double.infinity,
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          S.of(context).representationTitle,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return const ChangeThemeScreen();
-                                },
-                              ),
-                            );
-                          },
-                          child: Text(getCurrentThemeType(context)),
-                        ),
-                      ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "APP",
+                style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: theme.isDarkTheme()
+                          ? Colors.grey.shade300
+                          : Colors.grey.shade700,
                     ),
-                  ),
-                  const Divider(),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          S.of(context).gameBackgroundTitle,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  const ChangeGameBackgroundScreen(),
-                            ),
-                          ).then((value) {
-                            setState(() {});
-                          }),
-                          child: Container(
-                            height: 16,
-                            width: 16,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: colors[backgroundColorKey],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
               ),
-            ),
-            const SizedBox(height: 25),
-            Text(
-              S.of(context).settingsLanguageSubTitle,
-              style: Theme.of(context).textTheme.subtitle1,
-            ),
-            const SizedBox(height: 6),
-            InkWell(
-              borderRadius: BorderRadius.circular(8),
-              onTap: () {
-                showDialog(
-                  barrierDismissible: false,
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      actionsPadding: EdgeInsets.zero,
-                      shape: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide.none,
-                      ),
-                      title: Text(
-                        S.of(context).languageAlertTitle,
-                        textAlign: TextAlign.center,
-                      ),
-                      content: Text(
-                        S.of(context).languageAlertContent,
-                        style: Theme.of(context).textTheme.bodyText2,
-                        textAlign: TextAlign.center,
-                      ),
-                      actionsAlignment: MainAxisAlignment.center,
-                      actions: [
-                        const Divider(color: Colors.grey, height: 1),
-                        // InkWell(
-                        //   onTap: () {
-                        //     Navigator.pop(context);
-                        //     Future.delayed(
-                        //       const Duration(
-                        //         milliseconds: 300,
-                        //       ),
-                        //     ).then(
-                        //       (value) {
-                        //         // PermissionHandler().openAppSettings();
-                        //         // OpenSettings.openAppSetting();
-                        //       },
-                        //     );
-                        //   },
-                        //   child: Container(
-                        //     width: double.infinity,
-                        //     height: 48,
-                        //     alignment: Alignment.center,
-                        //     child: Text(
-                        //       S.of(context).next,
-                        //       style: const TextStyle(
-                        //         fontWeight: FontWeight.bold,
-                        //         // color: primary,
-                        //       ),
-                        //       textAlign: TextAlign.center,
-                        //     ),
-                        //   ),
-                        // ),
-                        // const Divider(color: Colors.grey, height: 1),
-                        InkWell(
-                          onTap: () => Navigator.pop(context),
-                          child: Container(
-                            width: double.infinity,
-                            height: 48,
-                            alignment: Alignment.center,
-                            child: Text(
-                              S.of(context).cancel,
-                              style: Theme.of(context).textTheme.bodyText1,
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ),
-                      ],
-                    );
-                  },
-                );
-              },
-              child: Container(
-                padding: const EdgeInsets.all(12),
+              const SizedBox(height: 6),
+              Ink(
                 decoration: BoxDecoration(
                   color: theme.isDarkTheme()
                       ? darkBackgroundColor
                       : lightBackgroundColor,
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(country.nationality),
-                      Flag.fromString(
-                        country.unLocode,
-                        height: 16,
-                        width: 20,
+                child: Column(
+                  children: [
+                    TopicButton(
+                      label: S.of(context).representationTitle,
+                      color: Colors.indigo.shade300,
+                      icon: const Icon(
+                        Icons.color_lens_outlined,
+                        size: 20,
+                        color: Colors.white,
                       ),
-                    ],
-                  ),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const ChangeThemeScreen();
+                          },
+                        ),
+                      ),
+                      isTop: true,
+                      topRadius: 10,
+                    ),
+                    TopicButton(
+                      label: S.of(context).settingsLanguageSubTitle,
+                      color: Colors.blue,
+                      icon: const Icon(
+                        Icons.language,
+                        size: 20,
+                        color: Colors.white,
+                      ),
+                      onTap: () {
+                        showDialog(
+                          barrierDismissible: false,
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              actionsPadding: EdgeInsets.zero,
+                              shape: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                borderSide: BorderSide.none,
+                              ),
+                              title: Text(
+                                S.of(context).languageAlertTitle,
+                                textAlign: TextAlign.center,
+                              ),
+                              content: Text(
+                                S.of(context).languageAlertContent,
+                                style: Theme.of(context).textTheme.bodyText2,
+                                textAlign: TextAlign.center,
+                              ),
+                              actionsAlignment: MainAxisAlignment.center,
+                              actions: [
+                                const Divider(color: Colors.grey, height: 1),
+                                InkWell(
+                                  onTap: () => Navigator.pop(context),
+                                  child: Container(
+                                    width: double.infinity,
+                                    height: 48,
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      S.of(context).cancel,
+                                      style:
+                                          Theme.of(context).textTheme.bodyText1,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      isBottom: true,
+                      bottomRadius: 10,
+                    ),
+                  ],
                 ),
               ),
-            ),
-            // const SizedBox(height: 25),
-            // Text(
-            //   S.of(context).others,
-            //   style: Theme.of(context).textTheme.subtitle1,
-            // ),
-            // const SizedBox(height: 6),
-            // Container(
-            //   padding: const EdgeInsets.all(12),
-            //   margin: const EdgeInsets.only(top: 6),
-            //   decoration: BoxDecoration(
-            //     color: theme.isDarkTheme()
-            //         ? darkBackgroundColor
-            //         : lightBackgroundColor,
-            //     borderRadius: BorderRadius.circular(8),
-            //   ),
-            //   width: double.infinity,
-            //   child: Column(
-            //     children: [
-            //       Padding(
-            //         padding: const EdgeInsets.symmetric(vertical: 4),
-            //         child: Row(
-            //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //           children: [
-            //             Text(
-            //               "Help us",
-            //               style: const TextStyle(
-            //                 fontWeight: FontWeight.w500,
-            //               ),
-            //             ),
-            //             GestureDetector(
-            //               onTap: () {
-            //                 Navigator.push(
-            //                   context,
-            //                   MaterialPageRoute(
-            //                     builder: (context) {
-            //                       return const ChangeThemeScreen();
-            //                     },
-            //                   ),
-            //                 );
-            //               },
-            //               child: IconTheme(
-            //                 data: Theme.of(context).iconTheme,
-            //                 child: const Icon(
-            //                   CupertinoIcons.arrow_right,
-            //                   size: 20,
-            //                 ),
-            //               ),
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //       // const Divider(),
-            //       // Padding(
-            //       //   padding: const EdgeInsets.symmetric(vertical: 4),
-            //       //   child: Row(
-            //       //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //       //     children: [
-            //       //       Text(
-            //       //         style: const TextStyle(
-            //       //           fontWeight: FontWeight.w500,
-            //       //         ),
-            //       //       ),
-            //       //       GestureDetector(
-            //       //         onTap: () => Navigator.push(
-            //       //           context,
-            //       //           MaterialPageRoute(
-            //       //             builder: (context) =>
-            //       //                 const ChangeGameBackgroundScreen(),
-            //       //           ),
-            //       //         ).then((value) {
-            //       //           setState(() {});
-            //       //         }),
-            //       //         child: Container(
-            //       //           height: 16,
-            //       //           width: 16,
-            //       //           decoration: BoxDecoration(
-            //       //             borderRadius: BorderRadius.circular(8),
-            //       //             color: colors[backgroundColorKey],
-            //       //           ),
-            //       //         ),
-            //       //       ),
-            //       //     ],
-            //       //   ),
-            //       // ),
-            //     ],
-            //   ),
-            // ),
-          ],
+              // const SizedBox(height: 25),
+              // Text(
+              //   "ALLGEMEIN",
+              //   style: Theme.of(context).textTheme.subtitle1!.copyWith(
+              //         fontSize: 14,
+              //         fontWeight: FontWeight.w500,
+              //         color: theme.isDarkTheme()
+              //             ? Colors.grey.shade300
+              //             : Colors.grey.shade700,
+              //       ),
+              // ),
+              // const SizedBox(height: 6),
+              // Ink(
+              //   decoration: BoxDecoration(
+              //     color: theme.isDarkTheme()
+              //         ? darkBackgroundColor
+              //         : lightBackgroundColor,
+              //     borderRadius: BorderRadius.circular(10),
+              //   ),
+              //   child: Column(
+              //     children: [
+              //       TopicButton(
+              //         label: "Datenschutzrichtlinie",
+              //         color: Color(0xFFf64c2d),
+              //         icon: const Icon(
+              //           Icons.lock_outline_sharp,
+              //           size: 20,
+              //           color: Colors.white,
+              //         ),
+              //         onTap: () {
+              //           print("CC");
+              //         },
+              //         isTop: true,
+              //         topRadius: 10,
+              //       ),
+              //       TopicButton(
+              //         label: "Nutzungsbedingungen",
+              //         color: Color(0xFFf3a885),
+              //         icon: const Icon(
+              //           Icons.color_lens_outlined,
+              //           size: 20,
+              //           color: Colors.white,
+              //         ),
+              //         onTap: () {
+              //           print("DD");
+              //         },
+              //       ),
+              //       TopicButton(
+              //         label: "Bewerte die App",
+              //         color: Color(0xFFf8b437),
+              //         icon: const Icon(
+              //           Icons.star,
+              //           size: 20,
+              //           color: Colors.white,
+              //         ),
+              //         onTap: () {
+              //           print("EE");
+              //         },
+              //       ),
+              //       TopicButton(
+              //         label: "Credits",
+              //         color: Color(0xFF5e7bc7),
+              //         icon: const Icon(
+              //           Icons.code,
+              //           size: 20,
+              //           color: Colors.white,
+              //         ),
+              //         onTap: () {
+              //           print("FF");
+              //         },
+              //       ),
+              //       TopicButton(
+              //         label: "Besuche uns auf Discord",
+              //         color: Colors.black,
+              //         icon: const Icon(
+              //           Icons.discord,
+              //           size: 20,
+              //           color: Colors.white,
+              //         ),
+              //         onTap: () {
+              //           print("GG");
+              //         },
+              //         isBottom: true,
+              //         bottomRadius: 10,
+              //       ),
+              //     ],
+              //   ),
+              // ),
+            ],
+          ),
         ),
       ),
     );
