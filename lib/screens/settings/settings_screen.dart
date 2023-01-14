@@ -10,6 +10,7 @@ import 'package:somethink/theme/theme_provider.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:somethink/widgets/topic_button.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -50,7 +51,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
         titleTextStyle: Theme.of(context).textTheme.headline5,
       ),
       body: SafeArea(
-        // Todo: implement
+        // Todo: implement this inside the change theme screen
+
 //  GestureDetector(
 //                           onTap: () => Navigator.push(
 //                             context,
@@ -76,7 +78,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "APP",
+                S.of(context).app,
                 style: Theme.of(context).textTheme.subtitle1!.copyWith(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
@@ -97,7 +99,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   children: [
                     TopicButton(
                       label: S.of(context).representationTitle,
-                      color: Colors.indigo.shade300,
+                      color: const Color(0xFF17b355),
                       icon: const Icon(
                         Icons.color_lens_outlined,
                         size: 20,
@@ -170,94 +172,110 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ],
                 ),
               ),
-              // const SizedBox(height: 25),
-              // Text(
-              //   "ALLGEMEIN",
-              //   style: Theme.of(context).textTheme.subtitle1!.copyWith(
-              //         fontSize: 14,
-              //         fontWeight: FontWeight.w500,
-              //         color: theme.isDarkTheme()
-              //             ? Colors.grey.shade300
-              //             : Colors.grey.shade700,
-              //       ),
-              // ),
-              // const SizedBox(height: 6),
-              // Ink(
-              //   decoration: BoxDecoration(
-              //     color: theme.isDarkTheme()
-              //         ? darkBackgroundColor
-              //         : lightBackgroundColor,
-              //     borderRadius: BorderRadius.circular(10),
-              //   ),
-              //   child: Column(
-              //     children: [
-              //       TopicButton(
-              //         label: "Datenschutzrichtlinie",
-              //         color: Color(0xFFf64c2d),
-              //         icon: const Icon(
-              //           Icons.lock_outline_sharp,
-              //           size: 20,
-              //           color: Colors.white,
-              //         ),
-              //         onTap: () {
-              //           print("CC");
-              //         },
-              //         isTop: true,
-              //         topRadius: 10,
-              //       ),
-              //       TopicButton(
-              //         label: "Nutzungsbedingungen",
-              //         color: Color(0xFFf3a885),
-              //         icon: const Icon(
-              //           Icons.color_lens_outlined,
-              //           size: 20,
-              //           color: Colors.white,
-              //         ),
-              //         onTap: () {
-              //           print("DD");
-              //         },
-              //       ),
-              //       TopicButton(
-              //         label: "Bewerte die App",
-              //         color: Color(0xFFf8b437),
-              //         icon: const Icon(
-              //           Icons.star,
-              //           size: 20,
-              //           color: Colors.white,
-              //         ),
-              //         onTap: () {
-              //           print("EE");
-              //         },
-              //       ),
-              //       TopicButton(
-              //         label: "Credits",
-              //         color: Color(0xFF5e7bc7),
-              //         icon: const Icon(
-              //           Icons.code,
-              //           size: 20,
-              //           color: Colors.white,
-              //         ),
-              //         onTap: () {
-              //           print("FF");
-              //         },
-              //       ),
-              //       TopicButton(
-              //         label: "Besuche uns auf Discord",
-              //         color: Colors.black,
-              //         icon: const Icon(
-              //           Icons.discord,
-              //           size: 20,
-              //           color: Colors.white,
-              //         ),
-              //         onTap: () {
-              //           print("GG");
-              //         },
-              //         isBottom: true,
-              //         bottomRadius: 10,
-              //       ),
-              //     ],
-              //   ),
-              // ),
+              const SizedBox(height: 25),
+              Text(
+                S.of(context).general,
+                style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: theme.isDarkTheme()
+                          ? Colors.grey.shade300
+                          : Colors.grey.shade700,
+                    ),
+              ),
+              const SizedBox(height: 6),
+              Ink(
+                decoration: BoxDecoration(
+                  color: theme.isDarkTheme()
+                      ? darkBackgroundColor
+                      : lightBackgroundColor,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    TopicButton(
+                      label: "Datenschutzrichtlinie",
+                      color: const Color(0xFFf64c2d),
+                      icon: const Icon(
+                        Icons.lock_outline_sharp,
+                        size: 20,
+                        color: Colors.white,
+                      ),
+                      onTap: () {
+                        print("CC");
+                      },
+                      isTop: true,
+                      topRadius: 10,
+                    ),
+                    TopicButton(
+                      label: "Nutzungsbedingungen",
+                      color: const Color(0xFFf3a885),
+                      icon: const Icon(
+                        Icons.article_rounded,
+                        size: 20,
+                        color: Colors.white,
+                      ),
+                      onTap: () {
+                        print("DD");
+                      },
+                    ),
+                    TopicButton(
+                      label: "Bewerte die App",
+                      color: const Color(0xFFf8b437),
+                      icon: const Icon(
+                        Icons.star,
+                        size: 20,
+                        color: Colors.white,
+                      ),
+                      onTap: () {
+                        if (Platform.isIOS) {
+                          launchUrlString(
+                              "https://itunes.apple.com/app/somethink/id6444685257?mt=8&action=write-review");
+                        } else if (Platform.isAndroid) {
+                          // todo: add also
+                        }
+                      },
+                    ),
+                    TopicButton(
+                      label: "Credits",
+                      color: Color(0xFF5e7bc7),
+                      icon: const Icon(
+                        Icons.code,
+                        size: 20,
+                        color: Colors.white,
+                      ),
+                      onTap: () {
+                        print("FF");
+                      },
+                    ),
+                    TopicButton(
+                      label: "Besuche uns auf Discord",
+                      color: Colors.black,
+                      icon: const Icon(
+                        Icons.discord,
+                        size: 20,
+                        color: Colors.white,
+                      ),
+                      onTap: () {
+                        launchUrlString("https://discord.gg/VCr3hacctM");
+                      },
+                      isBottom: true,
+                      bottomRadius: 10,
+                    ),
+                  ],
+                ),
+              ),
+              const Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 12),
+                  child: Text(
+                    version,
+                    style: TextStyle(
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

@@ -8,6 +8,8 @@ import 'package:somethink/theme/theme_styles.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+const version = "1.0.1";
+
 final darkBackgroundColor = Colors.grey.shade900;
 final lightBackgroundColor = Colors.grey.shade50;
 
