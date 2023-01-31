@@ -51,27 +51,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
         titleTextStyle: Theme.of(context).textTheme.headline5,
       ),
       body: SafeArea(
-        // Todo: implement this inside the change theme screen
-
-//  GestureDetector(
-//                           onTap: () => Navigator.push(
-//                             context,
-//                             MaterialPageRoute(
-//                               builder: (context) =>
-//                                   const ChangeGameBackgroundScreen(),
-//                             ),
-//                           ).then((value) {
-//                             setState(() {});
-//                           }),
-//                           child: Container(
-//                             height: 16,
-//                             width: 16,
-//                             decoration: BoxDecoration(
-//                               borderRadius: BorderRadius.circular(8),
-//                               color: colors[backgroundColorKey],
-//                             ),
-//                           ),
-//                         ),
         minimum: const EdgeInsets.all(15),
         child: SingleChildScrollView(
           child: Column(
@@ -194,7 +173,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 child: Column(
                   children: [
                     TopicButton(
-                      label: "Datenschutzrichtlinie",
+                      label: S.of(context).privacyPolicy,
                       color: const Color(0xFFf64c2d),
                       icon: const Icon(
                         Icons.lock_outline_sharp,
@@ -202,25 +181,27 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         color: Colors.white,
                       ),
                       onTap: () {
-                        print("CC");
+                        launchUrlString(
+                          "https://heitzmann.wtf/somethink-app/privacy-policiy/",
+                        );
                       },
                       isTop: true,
                       topRadius: 10,
                     ),
+                    // TopicButton(
+                    //   label: "Nutzungsbedingungen",
+                    //   color: const Color(0xFFf3a885),
+                    //   icon: const Icon(
+                    //     Icons.article_rounded,
+                    //     size: 20,
+                    //     color: Colors.white,
+                    //   ),
+                    //   onTap: () {
+                    //     print("DD");
+                    //   },
+                    // ),
                     TopicButton(
-                      label: "Nutzungsbedingungen",
-                      color: const Color(0xFFf3a885),
-                      icon: const Icon(
-                        Icons.article_rounded,
-                        size: 20,
-                        color: Colors.white,
-                      ),
-                      onTap: () {
-                        print("DD");
-                      },
-                    ),
-                    TopicButton(
-                      label: "Bewerte die App",
+                      label: S.of(context).rateTheApp,
                       color: const Color(0xFFf8b437),
                       icon: const Icon(
                         Icons.star,
@@ -236,20 +217,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         }
                       },
                     ),
+                    // TopicButton(
+                    //   label: "Credits",
+                    //   color: Color(0xFF5e7bc7),
+                    //   icon: const Icon(
+                    //     Icons.code,
+                    //     size: 20,
+                    //     color: Colors.white,
+                    //   ),
+                    //   onTap: () {
+                    //     print("FF");
+                    //   },
+                    // ),
                     TopicButton(
-                      label: "Credits",
-                      color: Color(0xFF5e7bc7),
-                      icon: const Icon(
-                        Icons.code,
-                        size: 20,
-                        color: Colors.white,
-                      ),
-                      onTap: () {
-                        print("FF");
-                      },
-                    ),
-                    TopicButton(
-                      label: "Besuche uns auf Discord",
+                      label: S.of(context).visitDiscord,
                       color: Colors.black,
                       icon: const Icon(
                         Icons.discord,
