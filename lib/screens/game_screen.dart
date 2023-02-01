@@ -34,26 +34,6 @@ class _GameScreenState extends State<GameScreen> {
           });
         }
       },
-      // onPanUpdate: (details) {
-      //   int sensivity = 8;
-      //   if (details.delta.dx > sensivity) {
-      //     // swipe right
-      //     if ((_index + 1) < widget.questions.length) {
-      //       setState(() {
-      //         _index++;
-      //       });
-      //     }
-      //   }
-
-      //   if (details.delta.dx < -sensivity) {
-      //     // swipe left
-      //     if (_index > 0) {
-      //       setState(() {
-      //         _index--;
-      //       });
-      //     }
-      //   }
-      // },
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -94,7 +74,6 @@ class _GameScreenState extends State<GameScreen> {
           child: SafeArea(
             minimum: const EdgeInsets.symmetric(horizontal: 16.0),
             child: GestureDetector(
-              // todo: add arrow to go back.
               child: Center(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
