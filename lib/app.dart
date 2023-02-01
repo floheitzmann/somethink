@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:somethink/screens/home_screen.dart';
 import 'package:somethink/theme/theme_provider.dart';
 import 'package:somethink/theme/theme_styles.dart';
@@ -97,5 +98,9 @@ class _AppState extends State<App> {
 
   void loadCurrentAppTheme() async {
     _provider.themeMode = await _provider.preference.getThemeMode();
+
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    backgroundColorKey =
+        prefs.getString("BACKGROUND_COLOR") ?? colors.keys.first;
   }
 }

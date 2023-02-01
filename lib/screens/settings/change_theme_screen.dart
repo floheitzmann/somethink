@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:somethink/app.dart';
 import 'package:somethink/screens/settings/settings_screen.dart';
 import 'package:somethink/theme/theme_provider.dart';
@@ -118,6 +119,7 @@ class _ChangeThemeScreenState extends State<ChangeThemeScreen> {
                         onTap: () {
                           setState(() {
                             backgroundColorKey = entry.key;
+                            _saveBackgroundColor(entry.key);
                           });
                         },
                         child: Container(
@@ -152,6 +154,11 @@ class _ChangeThemeScreenState extends State<ChangeThemeScreen> {
         ),
       ),
     );
+  }
+
+  void _saveBackgroundColor(String color) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString("BACKGROUND_COLOR", color);
   }
 
   Color darken(Color color, [double amount = .1]) {
