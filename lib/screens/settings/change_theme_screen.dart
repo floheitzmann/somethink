@@ -8,7 +8,6 @@ import 'package:somethink/screens/settings/settings_screen.dart';
 import 'package:somethink/theme/theme_provider.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:somethink/widgets/topic_button.dart';
 
 class ChangeThemeScreen extends StatefulWidget {
   const ChangeThemeScreen({super.key});

@@ -26,79 +26,106 @@ class _GameScreenState extends State<GameScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          onPressed: () => Navigator.pop(context),
-          icon: const Icon(
-            Icons.close,
-            size: 30,
-            color: Colors.black,
-          ),
-        ),
-        title: Text(
-          "${_index + 1}/${widget.questions.length}",
-          style: const TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HelpScreen(),
-              ),
-            ),
+    return GestureDetector(
+      onTap: () {
+        if ((_index + 1) < widget.questions.length) {
+          setState(() {
+            _index++;
+          });
+        }
+      },
+      // onPanUpdate: (details) {
+      //   int sensivity = 8;
+      //   if (details.delta.dx > sensivity) {
+      //     // swipe right
+      //     if ((_index + 1) < widget.questions.length) {
+      //       setState(() {
+      //         _index++;
+      //       });
+      //     }
+      //   }
+
+      //   if (details.delta.dx < -sensivity) {
+      //     // swipe left
+      //     if (_index > 0) {
+      //       setState(() {
+      //         _index--;
+      //       });
+      //     }
+      //   }
+      // },
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          leading: IconButton(
+            onPressed: () => Navigator.pop(context),
             icon: const Icon(
-              Icons.help_outline,
+              Icons.close,
               size: 30,
               color: Colors.black,
             ),
           ),
-        ],
-      ),
-      backgroundColor: colors[backgroundColorKey],
-      body: SafeArea(
-        minimum: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Center(
-          child: Text(
-            widget.questions[_index],
+          title: Text(
+            "${_index + 1}/${widget.questions.length}",
             style: const TextStyle(
-              fontWeight: FontWeight.w800,
               color: Colors.black,
-              fontSize: 32,
+              fontWeight: FontWeight.w600,
             ),
-            textAlign: TextAlign.center,
           ),
-        ),
-      ),
-      bottomNavigationBar: SafeArea(
-        minimum: EdgeInsets.symmetric(
-          horizontal: 25,
-          vertical: Platform.isAndroid ? 20 : 10,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            createRoundedTextButton(S.of(context).lastQuestion, () {
-              if (_index > 0) {
-                setState(() {
-                  _index--;
-                });
-              }
-            }),
-            createRoundedTextButton(S.of(context).nextQuestion, () {
-              if ((_index + 1) < widget.questions.length) {
-                setState(() {
-                  _index++;
-                });
-              }
-            }),
+          actions: [
+            IconButton(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HelpScreen(),
+                ),
+              ),
+              icon: const Icon(
+                Icons.help_outline,
+                size: 30,
+                color: Colors.black,
+              ),
+            ),
           ],
+        ),
+        backgroundColor: colors[backgroundColorKey],
+        body: GestureDetector(
+          child: SafeArea(
+            minimum: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: GestureDetector(
+              // todo: add arrow to go back.
+              child: Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      widget.questions[_index],
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w800,
+                        color: Colors.black,
+                        fontSize: 32,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    if (_index >= 1) const SizedBox(height: 20),
+                    if (_index >= 1)
+                      createRoundedTextButton(
+                        S.of(context).lastQuestion,
+                        () {
+                          if (_index > 0) {
+                            setState(() {
+                              _index--;
+                            });
+                          }
+                        },
+                      ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );
